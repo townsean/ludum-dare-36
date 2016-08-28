@@ -1,3 +1,28 @@
 <template>
-  <h1>${message}</h1>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <a href="https://github.com/townsean/ludum-dare-36"><p class="navbar-brand">Ancient Ciphers | Ludum Dare 36</p></a>
+        <ul class="nav navbar-nav navbar-right">
+          <li repeat.for="route of router.navigation">
+            <a class="$index ? 'active' : ''" href.bind="route.href">${route.title}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <router-view></router-view>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="navbar">
+    <div class="container">
+      <hr />
+      <small class="copyright">Ludum Dare 36 entry by <a href="http://www.twitter.com/thecodingcouple">Ashley Grenon</a>.</small>
+    </div>
+  </footer>
 </template>
