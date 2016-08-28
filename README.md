@@ -1,5 +1,5 @@
 # ludum-dare-36
-Source code for my Ludum Dare 36 entry. The theme is "Ancient Technology."
+Source code for my Ludum Dare 36 (LD36) entry, Ancient Ciphers. The theme for LD36 is "Ancient Technology."
 
 ## Synopsis
 
