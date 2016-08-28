@@ -3,7 +3,7 @@ Source code for my Ludum Dare 36 (LD36) entry, Ancient Ciphers. The theme for LD
 
 ## Synopsis
 
-In Ancient Ciphers players race against the clock to decode hidden messages.
+In Ancient Ciphers, players race against the clock to decode hidden messages.
 
 ## Motivation
 
