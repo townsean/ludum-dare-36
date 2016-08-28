@@ -1,0 +1,16 @@
+{
+    "ciphers": [
+        {
+            "title": "Caesar Cipher",
+            "name": "caesar-cipher",
+            "imgUrl": "",
+            "description": "explain the origin and how the Caesar Cipher works"
+        },
+        {
+            "title": "Cipher Disk",
+            "name": "cipher-disk",
+            "imgUrl": "",
+            "description": "explain the origin and how the Cipher Disk works"
+        }
+    ]
+}

@@ -1,5 +1,9 @@
 <template>
     <section class="panel-body">        
         <h1>Unlock the hidden message</h1>    
+        <div repeat.for="cipher of ciphers">
+            ${cipher.name} ${cipher.title}
+            <a route-href="route: ${cipher.name}"><h3>${cipher.title}</h3></a>
+        </div>
     </section>
 </template>
