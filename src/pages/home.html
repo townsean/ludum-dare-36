@@ -1,9 +1,10 @@
 <template>
     <section class="panel-body">        
-        <h1>Unlock the hidden message</h1>    
+        <h2>Unlock hidden messages. Select a cipher:</h2>    
         <div repeat.for="cipher of ciphers">
-            ${cipher.name} ${cipher.title}
-            <a route-href="route: ${cipher.name}"><h3>${cipher.title}</h3></a>
+            <!-- Doh! Was stuck on this issue for longer than I care to admit:
+             https://github.com/aurelia/router/issues/222 -->
+            <a route-href="route.bind: cipher.name"><h3>${cipher.title}</h3></a>
         </div>
     </section>
 </template>

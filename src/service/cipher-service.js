@@ -6,7 +6,7 @@ export class CipherService {
     constructor(http) {
         http.configure(config => {
             config
-                .withBaseUrl('./src/service');
+                .withBaseUrl('src/service');
         });
 
         this.http = http;
