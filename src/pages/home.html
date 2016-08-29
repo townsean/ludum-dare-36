@@ -1,10 +1,17 @@
 <template>
     <section class="panel-body">        
         <h2>Unlock hidden messages. Select a cipher:</h2>    
-        <div repeat.for="cipher of ciphers">
-            <!-- Doh! Was stuck on this issue for longer than I care to admit:
-             https://github.com/aurelia/router/issues/222 -->
-            <a route-href="route.bind: cipher.name"><h3>${cipher.title}</h3></a>
+        <div class="col-md-4" repeat.for="cipher of ciphers">
+            <figure class="thumbnail">
+                <img class="img-thumbnail" src="${cipher.imgUrl}" alt="${cipher.title} picture">
+                <figcaption class="caption">
+                    <h3>${cipher.title}</h3>
+                    <p>${cipher.description}</p>
+                    <!-- Doh! Was stuck on this issue for longer than I care to admit:
+                    https://github.com/aurelia/router/issues/222 -->
+                    <a class="btn btn-primary" role="button" route-href="route.bind: cipher.name">Decode</a>
+                </figcaption>
+            </figure>
         </div>
     </section>
 </template>

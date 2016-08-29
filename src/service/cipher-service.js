@@ -23,4 +23,8 @@ export class CipherService {
                    .then(response => response.json())
                    .then(json => this.messages = json.messages); 
     }
+
+    getMessageWithCaesarCipher(message, shift) {
+        
+    }
 }

@@ -92,12 +92,13 @@ define('pages/about',["exports"], function (exports) {
         _classCallCheck(this, About);
     };
 });
-define('pages/caesar-cipher',["exports"], function (exports) {
-    "use strict";
+define('pages/caesar-cipher',['exports', 'service/cipher-service', 'aurelia-framework'], function (exports, _cipherService, _aureliaFramework) {
+    'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.CaesarCipher = undefined;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -105,9 +106,25 @@ define('pages/caesar-cipher',["exports"], function (exports) {
         }
     }
 
-    var CaesarCipher = exports.CaesarCipher = function CaesarCipher() {
-        _classCallCheck(this, CaesarCipher);
-    };
+    var _dec, _class;
+
+    var CaesarCipher = exports.CaesarCipher = (_dec = (0, _aureliaFramework.inject)(_cipherService.CipherService), _dec(_class = function () {
+        function CaesarCipher(cipherService) {
+            _classCallCheck(this, CaesarCipher);
+
+            this.cipherService = cipherService;
+        }
+
+        CaesarCipher.prototype.activate = function activate() {
+            var _this = this;
+
+            return this.cipherService.getMessages().then(function (messages) {
+                return _this.messages = messages;
+            });
+        };
+
+        return CaesarCipher;
+    }()) || _class);
 });
 define('pages/cipher-disk',["exports"], function (exports) {
     "use strict";
@@ -233,13 +250,15 @@ define('service/cipher-service',['exports', 'aurelia-framework', 'aurelia-fetch-
             });
         };
 
+        CipherService.prototype.getMessageWithCaesarCipher = function getMessageWithCaesarCipher(message, shift) {};
+
         return CipherService;
     }()) || _class);
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <!-- Header -->\n  <header>\n    <nav class=\"navbar navbar-inverse\" role=\"navigation\">\n      <div class=\"container\">\n        <a href=\"https://github.com/townsean/ludum-dare-36\"><p class=\"navbar-brand\">Ancient Ciphers | Ludum Dare 36</p></a>\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li repeat.for=\"route of router.navigation\">\n            <a class=\"$index ? 'active' : ''\" href.bind=\"route.href\">${route.title}</a>\n          </li>\n        </ul>\n      </div>\n    </nav>\n  </header>\n  <!-- Main Content -->\n  <main>\n    <div class=\"container\">\n      <router-view></router-view>\n    </div>\n  </main>\n  <!-- Footer -->\n  <footer class=\"navbar\">\n    <div class=\"container\">\n      <hr />\n      <small class=\"copyright\">Ludum Dare 36 entry by <a href=\"http://www.twitter.com/thecodingcouple\">Ashley Grenon</a>.</small>\n    </div>\n  </footer>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <!-- Header -->\n  <header>\n    <nav class=\"navbar navbar-inverse\" role=\"navigation\">\n      <div class=\"container\">\n        <a href=\"https://github.com/townsean/ludum-dare-36\"><p class=\"navbar-brand\">Ancient Ciphers | Ludum Dare 36</p></a>\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li repeat.for=\"route of router.navigation\">\n            <a class=\"$index ? 'active' : ''\" href.bind=\"route.href\">${route.title}</a>\n          </li>\n        </ul>\n      </div>\n    </nav>\n  </header>\n  <!-- Main Content -->\n  <main>\n    <div class=\"container\">\n      <router-view></router-view>\n    </div>\n  </main>\n  <!-- Footer -->\n  <footer class=\"navbar\">\n    <div class=\"container\">\n      <hr />\n      <small class=\"copyright\">A past due Ludum Dare 36 entry by <a href=\"http://www.twitter.com/thecodingcouple\">Ashley Grenon</a>.</small>\n    </div>\n  </footer>\n</template>\n"; });
 define('text!pages/about.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">\r\n        <h1>About</h1>\r\n        <p>\r\n            Ancient Ciphers is my submission for <a href=\"http://ludumdare.com/\">Ludum Dare 36</a>!\r\n        </p>\r\n        </p>\r\n            Ludum Dare is a themed game jam that occurs three times a year. \r\n            The theme for Ludum Dare 36 is \r\n            <a href=\"http://ludumdare.com/compo/ludum-dare-36/?action=preview\">Ancient Technology</a>.\r\n        </p>\r\n    </section>\r\n</template>"; });
-define('text!pages/caesar-cipher.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h1>Caesar Cipher</h1>    \r\n    </section>\r\n</template>"; });
-define('text!pages/cipher-disk.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h1>Cipher Disk</h1>    \r\n    </section>\r\n</template>"; });
+define('text!pages/caesar-cipher.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h1>Caesar Cipher</h1>    \r\n        <p>How many messages can you decode in 5 minutes?</p>\r\n        <a class=\"btn btn-primary\" role=\"button\" click.trigger=\"startChallenge()\">Start countdown</a>\r\n    </section>\r\n</template>"; });
+define('text!pages/cipher-disk.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h1>Cipher Disk</h1> \r\n        <p>In progress...</p>   \r\n    </section>\r\n</template>"; });
 define('text!pages/contact.html', ['module'], function(module) { module.exports = "1 lines (11 sloc)  459 Bytes\r\n<template>\r\n    <section class=\"panel-body\">        \r\n        <h1>Contact</h1>\r\n        <p>Questions? Comments? Issues? Let me know!<br />\r\n            You can reach me on <strong>Twitter</strong> as \r\n            <a href=\"https://twitter.com/thecodingcouple\">@thecodingcouple</a> \r\n            or you can fill out a <strong>contact form</strong> \r\n            <a href=\"http://www.thecodingcouple.com/contact/\">here</a>.\r\n        </p>      \r\n    </section>\r\n</template>"; });
-define('text!pages/home.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h2>Unlock hidden messages. Select a cipher:</h2>    \r\n        <div repeat.for=\"cipher of ciphers\">\r\n            <!-- Doh! Was stuck on this issue for longer than I care to admit:\r\n             https://github.com/aurelia/router/issues/222 -->\r\n            <a route-href=\"route.bind: cipher.name\"><h3>${cipher.title}</h3></a>\r\n        </div>\r\n    </section>\r\n</template>"; });
+define('text!pages/home.html', ['module'], function(module) { module.exports = "<template>\r\n    <section class=\"panel-body\">        \r\n        <h2>Unlock hidden messages. Select a cipher:</h2>    \r\n        <div class=\"col-md-4\" repeat.for=\"cipher of ciphers\">\r\n            <figure class=\"thumbnail\">\r\n                <img class=\"img-thumbnail\" src=\"${cipher.imgUrl}\" alt=\"${cipher.title} picture\">\r\n                <figcaption class=\"caption\">\r\n                    <h3>${cipher.title}</h3>\r\n                    <p>${cipher.description}</p>\r\n                    <!-- Doh! Was stuck on this issue for longer than I care to admit:\r\n                    https://github.com/aurelia/router/issues/222 -->\r\n                    <a class=\"btn btn-primary\" role=\"button\" route-href=\"route.bind: cipher.name\">Decode</a>\r\n                </figcaption>\r\n            </figure>\r\n        </div>\r\n    </section>\r\n</template>"; });
 //# sourceMappingURL=app-bundle.js.map

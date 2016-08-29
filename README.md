@@ -13,8 +13,8 @@ When I started to brainstorm game ideas with an ancient tech theme the Caesar ci
 * [Aurelia](http://aurelia.io/)
 * [Bootstrap 3](http://getbootstrap.com/)
 * [Visual Studio Code](https://code.visualstudio.com)
-* [Cipher Disk](https://en.wikipedia.org/wiki/Cipher_disk#/media/File:UnionCipherDisk.nsa.jpg)
-* [Caesar](https://en.wikipedia.org/wiki/Caesar_cipher#/media/File:Gaius_Julius_Caesar_(100-44_BC).JPG)
+* [Cipher Disk](https://en.wikipedia.org/wiki/Cipher_disk#/media/File:UnionCipherDisk.nsa.jpg) photo
+* [Caesar](https://en.wikipedia.org/wiki/Caesar_cipher#/media/File:Gaius_Julius_Caesar_(100-44_BC).JPG) photo
 
 ## License
 

@@ -3,13 +3,13 @@
         {
             "title": "Caesar Cipher",
             "name": "caesar-cipher",
-            "imgUrl": "",
+            "imgUrl": "assets/caesar.jpg",
             "description": "explain the origin and how the Caesar Cipher works"
         },
         {
             "title": "Cipher Disk",
             "name": "cipher-disk",
-            "imgUrl": "",
+            "imgUrl": "assets/cipher-disk.jpg",
             "description": "explain the origin and how the Cipher Disk works"
         }
     ]
