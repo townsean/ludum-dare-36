@@ -20,7 +20,7 @@ npm install
 au run
 ```
 
-The website will be hosted at ```localhost:9000```.
+The website will be hosted on ```localhost:9000```.
 
 ## Built With
 * [Aurelia](http://aurelia.io/)
