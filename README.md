@@ -9,7 +9,7 @@ In Ancient Ciphers, players race against the clock to decode hidden messages.
 
 ## Motivation
 
-When I started to brainstorm game ideas with an ancient tech theme the Caesar cipher popped into my mind.
+When I brainstormed game ideas with an ancient tech theme the Caesar cipher popped into my mind.
 
 ## Install
 
