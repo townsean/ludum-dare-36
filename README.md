@@ -13,10 +13,14 @@ When I started to brainstorm game ideas with an ancient tech theme the Caesar ci
 
 ## Install
 
-```npm install```
-```au run```
+```
+npm install
+```
+```
+au run
+```
 
-The website will be hosted at localhost:9000.
+The website will be hosted at ```localhost:9000```.
 
 ## Built With
 * [Aurelia](http://aurelia.io/)
