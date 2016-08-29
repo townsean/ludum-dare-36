@@ -3,7 +3,7 @@
   <header>
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="container">
-        <a href="https://github.com/townsean/ludum-dare-36"><p class="navbar-brand">Ancient Ciphers | Ludum Dare 36</p></a>
+        <a route-href="route: home"><p class="navbar-brand">Ancient Ciphers | Ludum Dare 36</p></a>
         <ul class="nav navbar-nav navbar-right">
           <li repeat.for="route of router.navigation">
             <a class="$index ? 'active' : ''" href.bind="route.href">${route.title}</a>

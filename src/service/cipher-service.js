@@ -1,5 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
+import { CaesarCipherMessage } from 'model/caesar-cipher-message';
 
 @inject(HttpClient)
 export class CipherService {
