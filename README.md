@@ -11,8 +11,16 @@ In Ancient Ciphers, players race against the clock to decode hidden messages.
 
 When I started to brainstorm game ideas with an ancient tech theme the Caesar cipher popped into my mind.
 
+## Install
+
+```npm install```
+```au run```
+
+The website will be hosted at localhost:9000.
+
 ## Built With
 * [Aurelia](http://aurelia.io/)
+* Aurelia CLI
 * [Bootstrap 3](http://getbootstrap.com/)
 * [Visual Studio Code](https://code.visualstudio.com)
 * [Cipher Disk](https://en.wikipedia.org/wiki/Cipher_disk#/media/File:UnionCipherDisk.nsa.jpg) photo
